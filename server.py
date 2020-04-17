@@ -6,9 +6,13 @@ import threading
 HEADER = 64     # bytes
 PORT = 5050
 SERVER = socket.gethostbyname(socket.gethostname())
+# SERVER = "73.223.126.76"
 ADDR = (SERVER, PORT)
 FORMAT = 'utf-8'
 DISCONNECT_MESSAGE = "!DISCONNECT"
+
+
+
 
 server = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 server.bind(ADDR)
