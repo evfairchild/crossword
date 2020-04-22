@@ -2,11 +2,13 @@ __author__ = "evfairchild"
 
 import socket
 
+
 HEADER = 64
 PORT = 5050
 FORMAT = 'utf-8'
 DISCONNECT_MESSAGE = "!DISCONNECT"
 SERVER = socket.gethostbyname(socket.gethostname())
+#SERVER = '73.223.126.76'
 ADDR = (SERVER, PORT)
 
 client = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
@@ -27,7 +29,10 @@ def send(msg):
     print(client.recv(2048).decode(FORMAT))     # receive message from server
 
 
-send(input("Send to Server: "))
+msg = input("Send to Server: ")
+while msg.lower() is not "end":
+    send(msg)
+    msg = input("Send to Server: ")
 
 send(DISCONNECT_MESSAGE)
 

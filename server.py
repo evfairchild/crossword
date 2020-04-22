@@ -12,9 +12,8 @@ FORMAT = 'utf-8'
 DISCONNECT_MESSAGE = "!DISCONNECT"
 
 
-
-
 server = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+# AF_INET refers to IPV4 family of ip addresses. SOCK_STREAM refers to TCP protocol. Use SOCK_DGRAM for UDP socket.
 server.bind(ADDR)
 
 
